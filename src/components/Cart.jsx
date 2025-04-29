@@ -24,12 +24,12 @@ const Cart = ({ cartItems, removeFromCart }) => {
           <ul>
             {cartItems.map((item, index) => (
               <li key={index}>
-                {item.name} - ${item.price.toFixed(2)}
+                {item.name} - ₹{item.price.toFixed(2)}
                 <button onClick={() => removeFromCart(item.id)}>Remove</button>
               </li>
             ))}
           </ul>
-          <h3>Total: ${total}</h3>
+          <h3>Total: ₹{total}</h3>
 
           <button className="confirm-button" onClick={handleConfirmOrder}>
             Confirm Order
