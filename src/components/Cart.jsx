@@ -1,29 +1,42 @@
 // src/components/Cart.js
-import React from 'react';
+import React, { useState } from 'react';
 import './Cart.css';
 
 const Cart = ({ cartItems, removeFromCart }) => {
-  // Calculate total price
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const [orderConfirmed, setOrderConfirmed] = useState(false);
+
+  const handleConfirmOrder = () => {
+    if (cartItems.length === 0) return;
+    // You could also send order to backend here
+    setOrderConfirmed(true);
+  };
+
+  const total = cartItems.reduce((sum, item) => sum + item.price, 0).toFixed(2);
 
   return (
     <div className="cart">
       <h2>Your Cart</h2>
+
       {cartItems.length === 0 ? (
-        <p>No items in the cart</p>
+        <p>Your cart is empty.</p>
       ) : (
-        <div>
-          {cartItems.map((item) => (
-            <div key={item.id} className="cart-item">
-              <p><strong>{item.name}</strong> - ${item.price.toFixed(2)}</p>
-              <button onClick={() => removeFromCart(item.id)} className="remove-button">
-                Remove from Cart
-              </button>
-            </div>
-          ))}
-          <hr />
-          <p className="cart-total"><strong>Total:</strong> ${total.toFixed(2)}</p>
-        </div>
+        <>
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>
+                {item.name} - ${item.price.toFixed(2)}
+                <button onClick={() => removeFromCart(item.id)}>Remove</button>
+              </li>
+            ))}
+          </ul>
+          <h3>Total: ${total}</h3>
+
+          <button className="confirm-button" onClick={handleConfirmOrder}>
+            Confirm Order
+          </button>
+
+          {orderConfirmed && <p className="confirmation-message">🎉 Order Confirmed! Thank you!</p>}
+        </>
       )}
     </div>
   );

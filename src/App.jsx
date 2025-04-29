@@ -1,10 +1,25 @@
 // src/App.js
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login';
 import RestaurantList from "./components/RestaurantList";
 import Cart from "./components/Cart";
 import "./App.css";
+
 const App = () => {
-  const [cart, setCart] = useState([]);
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<RestaurantList restaurants={restaurants} addToCart={addToCart} />} />
+        <Route path="/cart" element={<Cart cartItems={cart} removeFromCart={removeFromCart} />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
+};
+
+const [cart, setCart] = useState([]);
 
 
   const restaurants = [
@@ -106,7 +121,7 @@ const App = () => {
     setCart(cart.filter((item) => item.id !== itemId));
   };
 
-  return (
+
     <div className="App">
       <div className="app-title">
   <img src="https://images-platform.99static.com//Ba6VdSQsbU4OpiyQEzLi7yHy9KQ=/440x521:1494x1575/fit-in/500x500/99designs-contests-attachments/127/127439/attachment_127439993" alt="Logo" className="app-logo" />
@@ -119,9 +134,8 @@ const App = () => {
       </div>
       <Cart cartItems={cart} removeFromCart={removeFromCart} />
     </div>
-  );
+
 
   
-};
 
 export default App;
