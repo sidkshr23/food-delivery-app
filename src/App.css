@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  background-color: antiquewhite;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .logo img {
+  height: 20px !important ;
+  width: 20px !important ;
+  border-radius: 50%;
+}
+.navbar .navlinks {
+  display: flex;
+  gap: 10px;
+}
+.navbar a {
+  text-decoration: none;
+  font-size: larger;
+}
+.container {
+  height: 80vh;
+  background-color: aqua;
+}
+.restaurant-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rl{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  gap: 2rem;
+}
+.restaurant{
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.menu{
+  display: flex;
+  align-items: center;
+}

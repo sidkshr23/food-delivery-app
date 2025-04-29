@@ -1,0 +1,67 @@
+/* src/components/Login.css */
+
+/* Global Styles for Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+  }
+  
+  .login-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+  }
+  
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .login-form input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+  }
+  
+  .login-form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .login-form input[type="submit"]:active {
+    background-color: #3e8e41;
+  }
+  
+  .login-form p {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .login-form p a {
+    color: #4caf50;
+    text-decoration: none;
+  }
+  
+  .login-form p a:hover {
+    text-decoration: underline;
+  }
+  
