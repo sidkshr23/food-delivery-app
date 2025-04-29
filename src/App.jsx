@@ -6,6 +6,7 @@ import "./App.css";
 const App = () => {
   const [cart, setCart] = useState([]);
 
+
   const restaurants = [
     {
       id: 1,
@@ -116,6 +117,8 @@ const App = () => {
       <Cart cartItems={cart} removeFromCart={removeFromCart} />
     </div>
   );
+
+  
 };
 
 export default App;
